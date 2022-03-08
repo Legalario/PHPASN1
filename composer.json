@@ -1,8 +1,8 @@
 {
-    "name": "fgrosse/phpasn1",
+    "name": "legalario/phpasn1",
     "description": "A PHP Framework that allows you to encode and decode arbitrary ASN.1 structures using the ITU-T X.690 Encoding Rules.",
     "type": "library",
-    "homepage": "https://github.com/FGrosse/PHPASN1",
+    "homepage": "https://github.com/Legalario/PHPASN1",
     "license": "MIT",
     "authors": [
         {
