@@ -1,3 +1,6 @@
+#### Legalario v1.0.1 (2022-03)
+* Fix for UTCTime when date format includes milliseconds [#01](https://github.com/Legalario/PHPASN1/commit/8efb9583092b21001018cc697c8b4c38b0dc8f7f)
+
 #### v2.4.0 (2021-12)
 * Drop support for PHP 7.0 [#89](https://github.com/fgrosse/PHPASN1/pull/89)
 
