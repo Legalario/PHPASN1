@@ -66,9 +66,16 @@ class UTCTime extends AbstractTime implements Parsable
         || $binaryData[$offsetIndex] == '-') {
             $dateTime = static::extractTimeZoneData($binaryData, $offsetIndex, $dateTime);
         } elseif ($binaryData[$offsetIndex++] == '.') {
-            $offsetIndex += 3;
+           $zPos = stripos($binaryData, 'z', $offsetIndex);
+            if (!$zPos) {
+                throw new ParserException('Invalid UTC String', $offsetIndex);
+            }
+
+            $addPos = ($zPos - $offsetIndex);
+            $offsetIndex += $addPos;
+
             if ($binaryData[$offsetIndex] != 'Z') {
-                throw new ParserException('Invalid UTC String', $offsetIndex);    
+                throw new ParserException('Invalid UTC String', $offsetIndex);
             }
             $dateTime = static::extractTimeZoneData($binaryData, $offsetIndex, $dateTime);
             $offsetIndex -= 4;
